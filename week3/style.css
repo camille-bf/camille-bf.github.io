@@ -1,0 +1,38 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: blue;
+}
+
+p {
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid rgb(23, 5, 9);
+  background-color: beige;
+  min-height: 200px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-left: dashed 2px rgb(255, 0, 55);
+}
+
+.vcenter {
+  line-height: 160px;
+}
+
+span {
+  color: red;
+  display: block;
+  /* font-size: 4rem; */
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  justify-content: center;
+}
