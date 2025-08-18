@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: rgb(240, 240, 240);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.nav {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nav .nom {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: rgb(36, 36, 36);
+}
+.line {
+  width: 90%;
+  height: 1px;
+  background-color: black;
+  margin: auto;
+}
+.titre {
+  margin-top: 90px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 100px;
+  color: rgb(36, 36, 36);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: rgb(62, 62, 62);
+  margin: 20px;
+}
+
+.intro a {
+  color: rgb(36, 36, 36);
+  text-decoration: underline;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+}
+
+.answer {
+  font-family: "montserrat", sans-serif;
+  font-size: 1.2rem;
+  color: rgb(62, 62, 62);
+  margin: 20px;
+  max-width: 700px;
+  padding: 50px;
+  margin: 20px;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+}
