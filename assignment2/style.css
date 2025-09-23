@@ -1,23 +1,8 @@
-:root {
-  --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
-  --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
-}
-
-body,
-h1,
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
+  font-family: "Lexend", sans-serif;
+  background-color: #fbf7e6;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -25,96 +10,344 @@ body {
   justify-content: space-between;
 }
 
-/* Add additional styles as needed */
-
-/* Create a container for the main content */
 .container {
   max-width: 1000px;
   width: 100%;
   padding: 10px;
 }
-
-/* Header styling */
-header {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  padding: 10px 0;
-  text-align: center;
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 100%;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: #fbf7e6;
 }
 
-/* Navigation styling */
-nav {
-  margin-top: 20px;
-  text-align: center;
+/* Title that is on the left side of the nav bar: "What's Cookin'?" */
+.nav-title {
+  position: absolute;
+  left: 2rem;
+  background: rgb(98, 123, 92);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-family: "Limelight", sans-serif;
 }
 
-nav ul {
+.nav-links {
+  display: flex;
   list-style: none;
+  gap: 2rem;
+}
+
+/* Each link inside the nav bar */
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  background-color: rgb(98, 123, 92);
+  padding: 10px 15px;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.nav-links li a:hover {
+  background-color: rgb(173, 200, 167);
+  color: black;
+  border-color: #000;
+  border: 2px solid #000;
+}
+
+/* when the link is selected */
+.nav-links li a.selected {
+  background-color: rgb(210, 234, 204);
+  color: black;
+  border-color: #000;
+  border: 2px solid #000;
+}
+.nav-links li a:hover.selected {
+  background-color: rgb(173, 200, 167);
+  color: black;
+}
+
+main.container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-nav ul li {
-  margin-right: 20px;
+/* Steps Section */
+/* Each step button */
+.steps {
+  flex: 0 0 150px; /* Fixed width to 150px */
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
+.steps-buttons {
+  display: grid;
+  gap: 0.5rem;
 }
 
-/* Media player styling */
+.steps-buttons button {
+  background: rgb(98, 123, 92);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover and active effect for step buttons */
+.steps-buttons button:hover {
+  background-color: rgb(173, 200, 167);
+  color: black;
+  border: 2px solid #000;
+}
+
+.steps-buttons button:active {
+  background-color: rgb(198, 222, 192);
+  color: black;
+  border: 2px solid #000;
+}
+
+/* Media Player Section */
 .media-player {
-  width: 100%;
-  margin: 0 auto;
+  max-width: 800px;
+  flex: 0 0 auto;
 }
 
-.media-player video {
-  max-width: 100%;
+#custom-video-player {
+  width: 100%;
+  border-radius: 12px;
+  background: #000;
 }
 
 .custom-controls {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  margin-top: 10px;
-  width: 100%;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
 }
 
 .custom-controls button {
-  background-color: var(--main-btn-bg-color);
-  color: var(--main-text-color);
-  border: none;
-  padding: 8px 12px;
+  background-color: rgb(198, 222, 192);
+  color: black;
+  border: 2px solid #000;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
 }
 
+.custom-controls button:hover {
+  background-color: rgb(173, 200, 167);
+  color: black;
+  border: 2px solid #000;
+}
+
+/* Progress Bar */
 .progress-bar {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
-  margin-top: 10px;
+  background: #eee;
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
   overflow: hidden;
+  margin: 0 0.5rem;
 }
 
-.progress-bar span {
+#progress-bar-fill {
   display: block;
   height: 100%;
-  background-color: var(--main-bg-color);
-  width: 0;
-  transition: width 0.3s ease;
+  width: 0%;
+  background: rgb(71, 83, 68);
 }
 
-/* Footer styling */
-footer {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
+/* Title of the video section */
+.video-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: rgb(38, 60, 33);
+}
+
+/* Channel Bar Section */
+.channel-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Profile picture and Name of the channel */
+.channel-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(38, 60, 33);
+}
+
+/* Channel Picture */
+.channel-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Channel Name */
+.channel-name {
+  font-weight: 600;
+  color: rgb(38, 60, 33);
+  cursor: pointer;
+}
+
+/* Subscribe Button */
+.subscribe-btn {
+  margin-left: auto;
+  background: rgb(98, 123, 92);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Subscribe button when subscribed */
+.subscribe-btn.subscribed {
+  background-color: rgb(198, 222, 192);
+  color: black;
+  border-color: #000;
+  border: 2px solid #000;
+}
+
+/* Hover effect for subscribe button */
+.subscribe-btn:hover {
+  background-color: rgb(173, 200, 167);
+  color: black;
+  border-color: #000;
+  border: 2px solid #000;
+}
+
+/* Hover effect for subscribe button when subscribed */
+.subscribe-btn.subscribed:hover {
+  background-color: rgb(173, 200, 167);
+  color: black;
+  border-color: #000;
+  border: 2px solid #000;
+}
+
+/* Video description section */
+.description-viewsdays {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.video-description {
+  margin-top: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+  background: rgb(98, 123, 92);
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-height: 1000px;
+}
+
+/* Description of the video text */
+.video-description p {
+  max-height: 3em;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.description-text {
+  max-height: 3em;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* List of ingredients: removed the bullet points */
+.description-ingredients {
+  list-style: none;
+}
+.description-instructions {
+  list-style: none;
+}
+
+/* When the description is expanded */
+.description-text.hidden {
+  max-height: 1000px;
+}
+
+/* Hidden description */
+.video-description p.hidden {
+  max-height: 1000px;
+}
+
+/* Toggle Button: when the button is clicked, the description will show more */
+.toggle-description {
+  background: none;
+  border: none;
+  color: rgb(212, 233, 207);
+  cursor: pointer;
+  margin-top: 5px;
+  padding: 0;
+}
+
+/* Ingredients Section */
+/* The recipe section will have the image of the muffin on top and the list of ingredients below */
+.muffin-image {
+  position: absolute;
+  top: -75px;
+  left: 30%; /* So the image is in the center */
+  z-index: 2; /* so the image appears above the ingredients */
+}
+
+/* Image of the muffin */
+.muffin-image img {
+  width: 150px;
+  display: block;
+}
+
+.ingredients-box {
+  position: relative;
+  flex: 0 0 350px;
+}
+
+/* "Ingredients" title*/
+.ingredients h2 {
+  margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 1.5rem;
   text-align: center;
-  padding: 10px 0;
+}
+
+.ingredients {
+  background: rgb(98, 123, 92);
+  color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 100px 1.5rem 1.5rem 1.5rem;
+}
+
+footer {
+  color: #000;
+  text-align: center;
+  padding: 10px 15px;
   width: 100%;
 }

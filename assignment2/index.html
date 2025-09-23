@@ -10,64 +10,188 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Header Section -->
-    <header>
-      <h1>Media Player Website</h1>
-    </header>
-
     <!-- Navigation Section -->
-    <nav>
-      <ul>
+    <nav class="nav-bar">
+      <!-- title of the website -->
+      <div class="nav-title">What's Cookin'?</div>
+      <!-- menu buttons in the navbar -->
+      <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Playlists</a></li>
-        <!-- Add or remove navigation items as needed -->
+        <li><a href="#">Recipes</a></li>
+        <li><a href="#" class="selected">Videos</a></li>
+        <li><a href="#">Tips & Tricks</a></li>
+        <li><a href="#">About</a></li>
       </ul>
     </nav>
 
-    <!-- Main Content Section -->
+    <!-- Main Content -->
     <main class="container">
+      <!-- Steps Section -->
+      <!-- Here will be the buttons access the different steps in the instructions of the video -->
+      <div class="steps">
+        <div class="steps-buttons">
+          <button id="step1-button">Step 1</button>
+          <button id="step2-button">Step 2</button>
+          <button id="step3-button">Step 3</button>
+          <button id="step4-button">Step 4</button>
+          <button id="step5-button">Step 5</button>
+          <button id="step6-button">Step 6</button>
+          <button id="step7-button">Step 7</button>
+        </div>
+      </div>
+
       <!-- Media Player Section -->
+      <!-- Here will be the media player where there is the video, the buttons to control, the title, the channel name, 
+       subscriber count, subscribe button, and description of the video-->
       <div class="media-player">
-        <video id="custom-video-player" controls>
-          <source
-            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
-            type="video/mp4"
-          />
+        <video
+          id="custom-video-player"
+          controls
+          poster="https://i.ytimg.com/vi/8bi1MaUuzcQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDWEKxm3d-nTqCh2-20xGZGyOEaUw"
+        >
+          <source src="assets/recipe-video.mp4" type="video/mp4" />
         </video>
+
+        <!-- Here are the buttons to control the video: go back 10 seconds, play/pause and go 10 seconds forward and mute/unmute. 
+         This will allow the user to go back on his steps if he is confused or missed something. -->
         <div class="custom-controls">
-          <button id="play-pause-btn" onclick="togglePlayPause()">
+          <button id="back10sec-button">
             <img
-              id="play-pause-img"
-              src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
-              alt="Play Button"
+              src="assets/back.png"
+              alt="Back button"
+              width="24"
+              height="24"
+            />
+            <button id="play-pause-btn" onclick="togglePlayPause()">
+              <img
+                id="play-pause-img"
+                src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+                alt="Play Button"
+                width="24"
+                height="24"
+              />
+            </button>
+          </button>
+          <button id="next10sec-button">
+            <img
+              src="assets/next.png"
+              alt="Next button"
               width="24"
               height="24"
             />
           </button>
-          <!-- add the missing buttons or functionality here -->
+          <button id="mute-unmute-button">
+          <img
+            src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
+            alt=""
+            id="mute-unmute-img"
+            width="24"
+              height="24"
+          />
+        </button>
+
+          <!-- A button to go to fullscreen mode -->
           <div class="progress-bar">
             <span id="progress-bar-fill"></span>
           </div>
+          <button id="fullscreen-button">
+            <img
+              src="https://img.icons8.com/ios-glyphs/30/full-screen--v1.png"
+              alt="fullscreen button"
+              id="fullscreen-img"
+              width="24"
+              height="24"
+            />
+          </button>
+        </div>
+
+        <!-- Title of the video, channel name with its profile picture, subscriber count and subscribe button -->
+        <h2 class="video-title">Chocolate Muffin Recipe</h2>
+        <div class="channel-bar">
+          <img
+            src="https://i.pinimg.com/736x/5b/d0/c1/5bd0c1ea9d8935a4800431eb1c06bfba.jpg"
+            alt="Channel Profile"
+            class="channel-pic"
+          />
+          <div class="channel-info">
+            <span class="channel-name">5 STAR Michelin</span>
+            <span class="subscribers-count">1.2M subscribers</span>
+          </div>
+          <button class="subscribe-btn" id="subscribe-btn">Subscribe</button>
+        </div>
+
+        <!-- Description of the video with a button to show more or less of the text -->
+        <div class="video-description">
+          <!-- Added the number of views and when it was uploaded -->
+          <div class="description-viewsdays">
+            <p>635 078 views</p>
+            <p>5 days ago</p>
+          </div>
+          <!-- Small description -->
+           <div class="description-text">
+            <p>
+            Learn how to make the most delicious chocolate muffins in just 20
+            minutes! This recipe includes step-by-step instructions, tips for
+            perfect texture, and ideas for delicious toppings. Enjoy baking with
+            us!
+          </p>
+          <br></br>
+          <p>Ingredients 👇 </p>
+            <ul class="description-ingredients">
+              <li>3/4 cup cooking oil or melted butter </li>
+              <li>3/4 or 1 cups sugar</li>
+              <li>1 1/2 tsp vanilla extract</li>
+              <li>3 eggs</li>
+              <li>3/4 cup flour</li>
+              <li>1/3 cup + 2 1/2 tbsp cocoa</li>
+              <li>1/2 tsp baking powder</li>
+              <li>1/4 tsp salt</li>
+            </ul>
+            <br></br>
+            <p>INSTRUCTIONS</p>
+            <ul class="description-instructions">
+              <li>1. Preheat oven to 350 degrees. Grease a 8×8 square baking pan, or line it with parchment paper. </li>
+              <li>2. Mix together the oil, sugar and vanilla extract. </li>
+              <li>3. Add eggs and mix until well combined. </li>
+              <li>4. Combine flour, cocoa, baking powder and salt. </li>
+              <li>5. Slowly add to the egg mixture until well combined. </li>
+              <li>6. Pour the batter into the pan and spread evenly. </li>
+              <li>7. Bake for 25-30 minutes, or until a toothpick comes out with a few crumbs.</li>
+            </ul>
+          
+           </div>
+          <button class="toggle-description">Show More</button>
         </div>
       </div>
 
-      <!-- Additional Content Section -->
-      <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
-      </section>
+      <!-- Recipe Section -->
+      <!-- Here will be the recipe with the image of the muffin and the list of ingredients -->
+      <div class="ingredients-box">
+        <div class="muffin-image">
+          <img src="assets/brownie.png" alt="Muffin" />
+        </div>
+        <div class="ingredients">
+          <h2>Ingredients</h2>
+          <!-- I made a list for all the ingredients you need, so it's easier for user to follow the video -->
+          <ul>
+            <li>3/4 cup cooking oil or melted butter</li>
+            <li>3/4 or 1 cups sugar</li>
+            <li>1 1/2 tsp vanilla extract</li>
+            <li>3 eggs</li>
+            <li>3/4 cup flour</li>
+            <li>1/3 cup + 2 1/2 tbsp cocoa</li>
+            <li>1/2 tsp baking powder</li>
+            <li>1/4 tsp salt</li>
+          </ul>
+        </div>
+      </div>
     </main>
-
-    <!-- Footer Section -->
     <footer>
       <p>&copy; 2024 Media Player Website. All rights reserved.</p>
-      <a href="https://icons8.com/icon/59862/play">Play</a> icon by
-      <a href="https://icons8.com">Icons8</a>
-      <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
-      <a href="https://icons8.com">Icons8</a>
+      <p>
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Contact</a>
+      </p>
     </footer>
   </body>
 </html>
