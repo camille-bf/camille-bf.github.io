@@ -1,0 +1,178 @@
+/* https://colorhunt.co/palette/1a120b3c2a21d5cea3e5e5cb */
+
+body {
+  background-color: #1a120b;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #e5e5cb;
+  /* color: #3c2a21; */
+  font-size: 1.1rem;
+  gap: 1.5rem;
+}
+
+.outer {
+  border: 2px dashed #e5e5cb7a;
+  width: 400px;
+  min-height: 200px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  opacity: 1;
+  /* background-color: cornsilk; */
+  transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.5s ease;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-style: none;
+  background-color: rgb(222, 184, 135);
+  color: black;
+  transition: background-color 0.6s ease, scale 0.6s ease, rotate 0.6s ease;
+}
+
+button:hover {
+  background-color: rgb(151, 124, 89);
+  scale: 0.75;
+  /*rotate: 10deg;*/
+}
+
+input {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-color: aqua;
+  border-width: 6px;
+  transition: border-color 0.5s linear;
+  width: 140px;
+}
+
+input:hover {
+  border-color: rgb(249, 168, 255);
+}
+
+#duck-icon {
+  cursor: pointer;
+  transition: fill 0.4s ease;
+}
+
+#duck-icon:hover {
+  fill: rgb(249, 168, 255);
+}
+
+#my-duck {
+  cursor: pointer;
+  transition: scale 0.4s linear;
+  animation-name: jump;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#my-duck:hover {
+  scale: 1.2;
+}
+
+.box {
+  background-color: pink;
+  /*animation-name: box-animation;*/
+  animation-name: border-animation, box-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes box-animation {
+  0% {
+    background-color: pink;
+    transform: rotate(0deg);
+  }
+  20% {
+    background-color: lightblue;
+    transform: rotate(72deg);
+  }
+  50% {
+    background-color: rgb(107, 45, 45);
+    transform: rotate(180deg);
+  }
+  80% {
+    background-color: rgb(13, 197, 114);
+    transform: rotate(288deg);
+  }
+  100% {
+    background-color: rgb(234, 20, 56);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes border-animation {
+  0% {
+    border-color: #e5e5cb7a;
+  }
+  20% {
+    border-color: rgb(249, 168, 255);
+  }
+  50% {
+    border-color: rgb(107, 45, 45);
+  }
+  80% {
+    border-color: rgb(13, 197, 114);
+  }
+  100% {
+    border-color: rgb(234, 20, 56);
+  }
+}
+
+.loader {
+  width: 90px;
+  height: 90px;
+  border: 4px solid #ffffff;
+  border-top-color: blue;
+  border-bottom-color: rgb(0, 166, 255);
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: 0px, 0px;
+  }
+  20% {
+    transform: 0px, -20px;
+  }
+  50% {
+    transform: 0px, 0px;
+  }
+  70% {
+    transform: 0px, -15px;
+  }
+  100% {
+    transform: 0px, 0px;
+  }
+}
