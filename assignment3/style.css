@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  background-color: #16171b;
+  color: #f1f1f1;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  width: 100%;
+  background: #1f1f23;
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+}
+
+.navbar li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar li:hover {
+  color: #ff5555;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.shelf {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px 40px 80px 40px;
+  gap: 60px;
+}
+
+.vinyl-row {
+  display: flex;
+  gap: 80px;
+  padding-bottom: 30px;
+  position: relative;
+  border-bottom: 2px solid #333;
+  padding-bottom: 20px;
+  border-radius: 2px;
+}
+
+.vinyl {
+  width: 150px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  cursor: grab;
+}
+
+.vinyl img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.vinyl:hover {
+  transform: scale(1.5);
+  padding: 30px 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.vinyl:hover img {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-row:hover .vinyl:not(:hover) {
+  filter: blur(3px) brightness(0.6);
+}
+
+.vinyl:hover .info {
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+.info {
+  text-align: center;
+  margin-top: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.info p {
+  margin: 2px 0 0 0;
+  color: #bbb;
+  font-size: 12px;
+}
+
+.playcd {
+  flex: 1;
+  border-left: 2px solid #242427;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #0f0f12;
+}
