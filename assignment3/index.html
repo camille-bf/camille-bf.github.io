@@ -8,24 +8,16 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <nav class="navbar">
-      <ul>
-        <li>Home</li>
-        <li>Artists</li>
-        <li>Shop</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
     <main>
       <section class="shelf">
         <div class="vinyl-row">
-          <div class="vinyl" data-audio="sample1.mp3">
+          <div class="vinyl" data-audio="assets/txt-song1.mp3">
             <img
               src="https://i.pinimg.com/736x/08/da/42/08da427aed95803759fb078d5dc56ba0.jpg"
             />
             <div class="info">
               <h3>Artist</h3>
-              <p>title</p>
+              <p>I know I love you</p>
             </div>
           </div>
 
@@ -144,7 +136,12 @@
         </div>
       </section>
       <section class="playcd" id="playcd">
-        <p>Drag a vinyl here to play a sample !</p>
+        <p id="drop-text">Drag a vinyl here to play a sample !</p>
+        <img src="assets/table.png" alt="table" class="table" />
+        <audio id="audioPlayer" controls></audio>
+        <div class="progress-bar">
+          <span id="progress-bar-fill"></span>
+        </div>
       </section>
     </main>
   </body>
